@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper,twoside]{report}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+   \DeclareGraphicsExtensions{.pdf,.png,.jpg,.mps}
+   \usepackage{hyperref} 
+\else
+   % put here packages only for the DVI:
+\fi
+ 
+\usepackage{diplomastyle}
+ 
+\begin{document}
+
+\begin{abstract}
+ \textbf{Ермаков А.К. Построение сценариев диалога для интеллектуального агента на основе условных планов}. В работе рассматривается применение теории автоматического планирования в условиях частичной наблюдаемости к задаче диалога на естественном языке путем построения условных планов для заданной предметной области.
+\end{abstract}
+
+
+\tableofcontents
+
+\input{./tex/intro.tex}
+\input{./tex/planners_overview.tex}
+\input{./tex/dialog_agent.tex}
+\input{./tex/implementation.tex}
+\input{./tex/usage_tests.tex}
+\input{./tex/conclusions.tex}
+\clearpage
+
+\addcontentsline{toc}{section}{Список иллюстраций}
+\listoffigures
+
+\addcontentsline{toc}{section}{Список таблиц}
+\listoftables
+
+\addcontentsline{toc}{section}{Список литературы}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{diploma}
+
+%\nocite{*}
+\appendix
+\input{./tex/appendix_source.tex}
+\input{./tex/appendix_problems.tex}
+ 
+ 
+\end{document}

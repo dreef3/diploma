@@ -1,0 +1,99 @@
+\ProvidesPackage{diplomastyle}
+
+\usepackage{mathptmx}
+
+\usepackage{verbatim} 
+\usepackage{extsizes}
+\usepackage{cmap} % для кодировки шрифтов в pdf
+\usepackage[T2A]{fontenc} % Поддержка русских букв
+\usepackage[utf8]{inputenc} % Кодировка utf8
+\usepackage[english, russian]{babel} % Языки: русский, английский
+
+\usepackage{indentfirst} % отделять первую строку раздела абзацным отступом тоже
+\usepackage[usenames,dvipsnames]{color} % названия цветов
+\usepackage{makecell}
+\usepackage{multirow} % улучшенное форматирование таблиц
+
+\usepackage[nodisplayskipstretch]{setspace}
+\onehalfspacing
+\frenchspacing
+
+\usepackage[tableposition=top,small]{caption}
+\usepackage{subcaption}
+\DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+\DeclareCaptionLabelSeparator{gost}{~---~}
+\captionsetup{labelsep=gost}
+\captionsetup[figure]{labelformat=gostfigure}
+\captionsetup[table]{labelformat=gosttable}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+
+\usepackage[top=2cm,left=3cm,right=1cm,bottom=2cm,a4paper]{geometry}
+\geometry{left=1cm}
+\geometry{right=3cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+
+
+\usepackage{enumitem}
+\makeatletter
+\AddEnumerateCounter{\asbuk}{\@asbuk}{м)}
+\makeatother
+
+\setlist{nolistsep}
+%\renewcommand{\labelitemi}{-}
+%\renewcommand{\labelenumi}{\asbuk{enumi})}
+%\renewcommand{\labelenumii}{\arabic{enumii})}
+
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hspace{0.38\textwidth} \bfseries\MakeUppercase}
+\renewcommand{\cftbeforetoctitleskip}{-1em}
+\renewcommand{\cftaftertoctitle}{\mbox{}\hfill \\ \mbox{}\hfill{\footnotesize Стр.}\vspace{-2.5em}}
+\renewcommand{\cftchapfont}{\normalsize\bfseries \MakeUppercase{\chaptername} }
+\renewcommand{\cftsecfont}{\hspace{31pt}}
+\renewcommand{\cftsubsecfont}{\hspace{11pt}}
+\renewcommand{\cftbeforechapskip}{1em}
+\renewcommand{\cftparskip}{-1mm}
+\renewcommand{\cftdotsep}{1}
+\setcounter{tocdepth}{1} % задать глубину оглавления — до subsection вкл
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\floatname{algorithm}{Алгоритм}
+
+
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\lstset{
+language=Java,
+basicstyle=\small\sffamily,
+numbers=left,
+numberstyle=\tiny,
+frame=tb,
+columns=fullflexible,
+showstringspaces=false
+}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\usepackage{mdwlist}
+
+\usepackage{hyperref}
+
+\usepackage{wrapfig}
+\usepackage{float}
+
+\addto\captionsrussian{\renewcommand\figurename{Рис.}}
+\addto\captionsrussian{\renewcommand\figureautorefname{Рис.}}
+\addto\captionsrussian{\renewcommand\bibname{Список литературы}}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
